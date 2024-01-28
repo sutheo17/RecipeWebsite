@@ -1,0 +1,26 @@
+<%- include('header', {pagetitle: 'Hozzávaló módosítása'}) -%>
+
+<div>
+    <div class="row  padding-form" >
+        <div class="mx-auto col-10 col-md-8 col-lg-6">
+            <h2>Hozzávaló módosítása</h2>
+            <form method="POST">
+                <label class ="sr-only cell-width-ingr" for="nevInput">Név</label>
+                <input class ="width_input" type="text" id="nevInput" name="nev" placeholder="Étel neve" value="<%= ingredient.nev%>" required>
+                <br>
+                <label class ="sr-only cell-width-ingr" for="mennyInput">Mennyiség</label>
+                <input class ="width_input" type="number" id="mennyInput" name="menny" placeholder="123" value="<%= ingredient.menny%>" required>
+                <br>
+                <label class="sr-only cell-width-ingr" for="mertInput">Mértékegység</label>
+                <input class ="width_input" type="text" id="mertInput" name="mert" placeholder="kg" value="<%= ingredient.mert%>" required>
+                <br>
+
+                <input type ="submit" href="/ingredient/<%= food._id%>" class="btn btn-success mt-4" value="Mentés"/>
+                <a href="/ingredient/<%= food._id%>" class="btn btn-danger mt-4 margin-left-ingr">Mégse</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<%- include('footer') -%>

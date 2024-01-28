@@ -1,0 +1,45 @@
+<%- include('header', {pagetitle: 'Étel módosítása'}) -%>
+
+<div>
+    <div class="row  padding-form" >
+        <div class="mx-auto col-10 col-md-8 col-lg-6">
+            <h2>Étel módosítása</h2>
+            <form method="POST">
+                <label class ="sr-only cell-width" for="nevInput">Név</label>
+                <input class ="width_input" type="text" id="nevInput" name="nev" placeholder="Étel neve" value="<%= food.nev%>" required>
+                <br>
+                <label class ="sr-only cell-width" for="idoInput">Elk. idő (perc)</label>
+                <input class ="width_input" type="number" id="idoInput" name="ido" placeholder="123" value="<%= food.ido%>" required>
+                <br>
+                <label class="sr-only cell-width">Elk. nehézség</label>
+                <div class="btn-group" role="aaa" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="elk_neh" id="egyszerű" value="egyszerű" autocomplete="off" <%= (food.elk_neh.toString() === "egyszerű") ?  'checked' : ''%>>
+                    <label class="btn btn-outline-primary" for="egyszerű">Egyszerű</label>
+
+                    <input type="radio" class="btn-check" name="elk_neh" id="bonyolult" value="bonyolult" autocomplete="off" <%= (food.elk_neh.toString() === "bonyolult") ?  'checked' : ''%>>
+                    <label class="btn btn-outline-primary" for="bonyolult">Bonyulult</label>
+
+                </div>
+                <br>
+                <label class="sr-only cell-width">Költség</label>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="ar" id="átlagos" value="átlagos" autocomplete="off" <%= (food.ar.toString() === "átlagos") ?  'checked' : ''%>>
+                    <label class="btn btn-outline-primary" for="átlagos">Átlagos</label>
+
+                    <input type="radio" class="btn-check" name="ar" id="költséges" value="költséges" autocomplete="off" <%= (food.ar.toString() === "költséges") ?  'checked' : ''%>>
+                    <label class="btn btn-outline-primary" for="költséges">Költséges</label>
+
+                    <input type="radio" class="btn-check" name="ar" id="megfizethető" value="megfizethető" autocomplete="off" <%= (food.ar.toString() === "megfizethető") ?  'checked' : ''%>>
+                    <label class="btn btn-outline-primary" for="megfizethető">Megfizethető</label>
+                </div>
+                <br>
+
+                <input type ="submit" href="/" class="btn btn-success mt-4" value="Mentés"/>
+                <a href="/" class="btn btn-danger mt-4 margin-left">Mégse</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<%- include('footer') -%>

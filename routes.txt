@@ -1,0 +1,75 @@
+
+Ételek és hozzávalók
+-index.html - fő oldal, az ételek listája itt található meg (CRUD funkciókkal),
+                innen lehet elérni az egyes ételekhez tartozó hozzávalókat egy gombbal
+-ingredient.html - az egyes ételekhez tartozó hozzávalók listája (CRUD funkciókkal)
+-addfood.html - új étel hozzáadása (mentés, illetve visszalépési lehetőség)
+-modifyfood.html - meglévő étel adatainak módosítása (-||-)
+-addingredient.html - új hozzávaló felvétele egy adott ételhez (-||-)
+-modifyingredient.html - meglévő hozzávaló módosítása egy adott étel esetében (-||-)
+
+
+Routing
+
+
+
+[LIST OF MIDDLEWARES]
+
+middleware/common/
+    render.js
+
+middleware/food/
+    getListOfFood.js
+    getFood.js
+    saveFood.js
+    delFood.js
+
+middleware/ingredient/
+    getListOfIngredient.js
+    getIngredient.js
+    saveIngredient.js
+    delIngredient.js
+
+
+
+[FOOD]
+GET /                                                  - index.html
+    getListOfFoodMW
+    renderMW(index.html)
+
+GET,POST /food/add                                     - addfood.html
+    saveFoodMW
+    renderMW(addfood.html)
+       - ha volt érték -> formba ez legyen
+       - ha nem volt -> legyen üres
+
+GET,POST /food/modify/:foodid                          - modifyfood.html
+    getFoodMW
+    saveFoodMW
+    renderMW(modifyfood.html)
+
+GET /food/delete/:foodid
+    getFoodMW
+    delFoodMW
+
+
+
+[INGREDIENT]
+GET /ingredient/:foodid                               - ingredient.html
+    getFoodMW
+    getListOfIngredientMW
+    renderMW(ingredient.html)
+
+GET,POST /ingredient/add/:foodid                      - addingredient.html
+    saveIngredientMW
+    renderMW(addingredient.html)
+
+GET,POST /ingredient/modify/:foodid/:ingredientid     - modifyingredient.html
+    getFoodMW
+    getIngredientMW
+    saveIngredientMW
+    renderMW(modifyingredient.html)
+
+GET /ingredient/delete/:foodid/:ingredientid
+    getIngredientMW
+    delIngredientMW

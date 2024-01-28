@@ -1,0 +1,87 @@
+.empty-cell{
+    border: none;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.newfood-button{
+    vertical-align: middle !important;
+}
+
+.padding-form{
+    padding-top: 40px;
+}
+.margin-left{
+    margin-left: 238px;
+}
+
+.margin-left-ingr{
+    margin-left: 260px;
+}
+
+.margin-left-newfood{
+    margin-left: 160px;
+}
+
+.margin-left-newingr{
+    margin-left: 160px;
+}
+
+.back-to-foods-button{
+    text-align: right !important;
+}
+
+.width_input{
+    width: 300px;
+}
+
+.cell-width{
+    width: 100px;
+    padding-top: 15px;
+}
+
+.cell-width-ingr{
+    width: 110px;
+    padding-top: 15px;
+}
+
+.navbarheight{
+    height: 65px !important;
+}
+
+.unselectable{
+    user-select: none;
+}
+
+.toolbar{
+    color: white;
+}
+
+.centered-button{
+    vertical-align: middle !important;
+    border: none;
+}
+
+.main-title{
+    border: none;
+    font-size: 40px;
+}
+
+.amount{
+    width: 180px;
+}
+
+.unit{
+    width: 600px;
+}
+
+.modified-food-name{
+    vertical-align: middle !important;
+    text-align: right !important;
+    color: darkblue !important;
+}
+
+.border-all-side{
+    border: 2px solid black !important;
+}
+
